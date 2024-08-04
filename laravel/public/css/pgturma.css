@@ -1,0 +1,17 @@
+.table tr, th, td{
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
+
+.add{
+    text-align: center;
+}
+
+.veraaluno{
+    text-align: center;
+}
+
+.deletealuno{
+    text-align: center;
+}
+

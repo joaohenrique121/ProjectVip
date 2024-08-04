@@ -1,0 +1,20 @@
+.result{
+    width: 200px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 10px;
+    border: none;
+    border-style: none;
+}
+
+.container div{
+    margin: 10px;
+    margin: auto;
+}
+
+
+
+.table tr, th, td{
+    border: 1px solid #ddd;
+    border-collapse: collapse;
+}
