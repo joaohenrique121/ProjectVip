@@ -1,10 +1,14 @@
 $(document).ready(function(){
-    $("#loginform").click(function(){
+    $('#loginform').on('submit', e => {
+        e.preventDefault()
+
         const data = {
             email: $("#email").val(),
-            password: $("#senha").val()
+            password: $("#senha").val(),
         }
+
         const csrfToken = $('meta[name=csrf-token]').attr('content');
+
         $.ajax({
             type: "POST",
             url: "/login",
@@ -13,18 +17,20 @@ $(document).ready(function(){
             headers:{
                 'X-CSRF-TOKEN': csrfToken
             },
-            success: function (response) {
+            success: response => {
                 if(response.code === 200){
-                    if(response.is_admin==1){
-                        window.location.href = "/homeadm"
-                    }else{
+
+                    if (!response.is_admin == 1){
                         window.location.href = "/home"
                     }
-                }else{
-                    alert('Credenciais inválidas')
+
+                    window.location.href = "/dashboard"
+
                 }
-            }
+                alert('Credenciais inválidas')
+            },
         });
+
     })
 
     $("#logout").click(function(e){

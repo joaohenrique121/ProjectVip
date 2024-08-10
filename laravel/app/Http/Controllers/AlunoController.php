@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\Auth;
 class AlunoController extends Controller
 {
     public function index(){
-        $users = User::where('is_admin', false)->get();
+        $alunos = User::where('is_admin', false)->get();
 
-        return view('adm.paginaAlunos', compact('users'));
+        return view('adm.paginaAlunos', compact('alunos'));
     }
 
     public function delete($id){
@@ -32,7 +32,6 @@ class AlunoController extends Controller
         return response()->json(['code' => 200, 'message' => 'success']);
         
     }
-
     public function show($id){
         $user = User::select('id', 'name', 'email', 'contato')->where('id', $id)->first();
         return compact("user");

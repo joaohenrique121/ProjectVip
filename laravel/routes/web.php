@@ -20,31 +20,42 @@ Route::post('/register', [authentic::class, 'register']);
 Route::post('/login', [authentic::class, 'login']);
 
 Route::middleware(['auth'])->group(function(){
-
-    Route::get('/homeadm', function(){
-        return view('adm.home');
-    })->middleware(AdmMiddleware::class)->name('homeadm');
-
     Route::post('/logout', [authentic::class, 'logout']);
     
     Route::get('/home', function(){
-        return view('home');
+        return view('home')->with(['user' => auth()->user()]);
     })->name('home');
-    
-    Route::get('/alunos', [AlunoController::class, 'index'])->middleware(AdmMiddleware::class)->name('alunos');
 
-    Route::post('/deleteuser{id}', [AlunoController::class, 'delete'])->middleware(AdmMiddleware::class)->name('deleteuser');
+    Route::middleware(AdmMiddleware::class)->group(function(){
 
-    Route::get('/getupdate{id}', [AlunoController::class, 'show'])->middleware(AdmMiddleware::class)->name('updatealuno');
+        //ROTAS DO FRONT-END
 
-    Route::patch('/updatealuno', [AlunoController::class, 'update'])->middleware(AdmMiddleware::class)->name('updatealuno');
+        Route::get('/dashboard', function(){
+            return view('adm.dashboard')->with(['user' => auth()->user()]);
+        })->middleware(AdmMiddleware::class)->name('dashboard');
 
-    Route::get('/turmas', [TurmaController::class, 'index'])->middleware(AdmMiddleware::class)->name('turmas');
+        Route::get('/alunos', [AlunoController::class, 'index'])->name('alunos');
 
-    Route::post('/turmacreate', [TurmaController::class, 'create'])->middleware(AdmMiddleware::class)->name('turmacreate');
+        Route::get('/turmas', [TurmaController::class, 'index'])->name('turmas');
 
-    Route::post('/deleteturma{id}', [TurmaController::class, 'delete'])->middleware(AdmMiddleware::class)->name('deleteturma');
+        Route::get('atividades', function (){
+            return view('adm.atividades');
+        })->name('atividades');
 
-    Route::get('/alunoprofile', [AlunoController::class, 'profile'])->name('alunoprofile');
+        Route::post('/deleteuser{id}', [AlunoController::class, 'delete'])->name('deleteuser');
+
+        Route::get('/getupdate{id}', [AlunoController::class, 'show'])->name('updatealuno');
+
+        Route::patch('/updatealuno', [AlunoController::class, 'update'])->name('updatealuno');
+
+
+        Route::post('/turmacreate', [TurmaController::class, 'create'])->name('turmacreate');
+
+        Route::post('/deleteturma{id}', [TurmaController::class, 'delete'])->name('deleteturma');
+
+        Route::get('/alunoprofile', [AlunoController::class, 'profile'])->name('alunoprofile');
+    });
+
+
 
 });

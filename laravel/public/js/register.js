@@ -1,12 +1,18 @@
 $(document).ready(function(){
-    $("form").submit(function(e){
+    $(".register-form").submit(function(e){
         e.preventDefault();
+
         const data = {
             email: $("#email").val(),
             name: $("#nome").val(),
             password: $("#senha").val(),
             contato: $("#contato").val()
         }
+
+        console.log(data)
+
+        return
+
         const csrfToken = $('meta[name=csrf-token]').attr('content');
         $.ajax({
             type: "POST",
