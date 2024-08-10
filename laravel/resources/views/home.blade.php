@@ -11,4 +11,5 @@ $user = auth()->user();
 @endsection
 @section('scripts')
 <script src="{{asset('js/dropdown.js')}}"></script>
+<script src="{{asset('js/modal.js')}}"></script>
 @endsection

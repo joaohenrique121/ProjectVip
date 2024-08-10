@@ -186,3 +186,38 @@ nav{
         transform: translateY(-100%);
     }
 }
+
+.modal-root{
+    border: 1px solid rgba(0, 0, 0, 0.15) ;
+    min-width: 500px;
+    min-height: 300px;
+    border-radius: 10px;
+}
+
+.modal-body{
+    width: calc();
+}
+
+.modal-header{
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+#close{
+    background-color: none;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    border: none;
+}
+
+#close:hover{
+    background-color: var(--red-400);
+    color: #ffff;
+}
+
+.modal-footer{
+    height: 100px;
+}
+
