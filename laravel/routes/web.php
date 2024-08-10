@@ -23,7 +23,7 @@ Route::middleware(['auth'])->group(function(){
     Route::post('/logout', [authentic::class, 'logout']);
     
     Route::get('/home', function(){
-        return view('home')->with(['user' => auth()->user()]);
+        return view('home');
     })->name('home');
 
     Route::middleware(AdmMiddleware::class)->group(function(){
@@ -31,7 +31,7 @@ Route::middleware(['auth'])->group(function(){
         //ROTAS DO FRONT-END
 
         Route::get('/dashboard', function(){
-            return view('adm.dashboard')->with(['user' => auth()->user()]);
+            return view('adm.dashboard');
         })->middleware(AdmMiddleware::class)->name('dashboard');
 
         Route::get('/alunos', [AlunoController::class, 'index'])->name('alunos');

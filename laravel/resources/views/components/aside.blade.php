@@ -1,6 +1,7 @@
 @php
-
-    if ($isAdmin){
+$user = auth()->user();
+$is_admin = $user->is_admin == 1 ? true : false; 
+    if ($is_admin){
         $aside_items = ['Dashboard','Alunos', 'Turmas', 'Atividades'];
         $aside_icons = ['fa-chart-line', 'fa-user', 'fa-chalkboard', 'fa-tasks'];
         $aside_links = ['dashboard', 'alunos', 'turmas', 'atividades'];

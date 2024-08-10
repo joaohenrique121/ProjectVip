@@ -37,10 +37,4 @@ class AlunoController extends Controller
         return compact("user");
     }
 
-    public function profile(){
-        $userId = Auth::id();
-        $user = User::find($userId);
-
-        return response()->json(['code' => 200, 'user' => $user->only('name', 'email', 'contato')]);
-    }
 }
