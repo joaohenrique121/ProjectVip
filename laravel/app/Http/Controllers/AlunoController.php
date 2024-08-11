@@ -41,13 +41,13 @@ class AlunoController extends Controller
 
     public function updateProfile(Request $request)
     {
+        try{
         $data = $request->validate([
             'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg'
         ]);
-        
+
         $user = auth()->user();
 
-        try{
             if ($request->hasFile('profile_picture')) {
 
                 if ($user->profile_picture != null) {
@@ -61,9 +61,11 @@ class AlunoController extends Controller
             }
     
             $user->update($data);
+
+            return true;
     
         }catch(Exception $error){
-            dd($error);
+            return false;
         }
 
 

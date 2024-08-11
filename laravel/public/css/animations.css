@@ -9,9 +9,30 @@
 
 @keyframes slide-left {
     0%{
-        transform: translateX(0px);
+        transform: translateX(0);
     }
     100%{
         transform: translateX(-100%);
+    }
+}
+
+@keyframes scale-up {
+    0%{
+        scale: 25%;
+    }
+    50%{
+        scale: 50%;
+    }
+    100%{
+        scale: 100%;
+    }
+}
+
+@keyframes scale-down {
+    0%{
+        scale: 0;
+    }
+    100%{
+        scale: 100%;
     }
 }

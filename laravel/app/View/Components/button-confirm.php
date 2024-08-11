@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class button-confirm extends Component
+class button_confirm extends Component
 {
     /**
      * Create a new component instance.

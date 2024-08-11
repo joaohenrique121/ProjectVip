@@ -59,6 +59,10 @@ aside{
     position: fixed;
 }
 
+dialog{
+    animation: scale-up 0.15s ease-in;
+}
+
 .show{
     animation: slide-right 0.5s ease-in forwards;
 }
@@ -165,7 +169,6 @@ nav{
     gap: 10px;
 }
 
-<<<<<<< HEAD
 .upload-image-container{
     border-radius: 50%;
     background-color: #ddd;
@@ -181,7 +184,6 @@ nav{
     margin-top: 35px;
     display: flex;
     justify-content: center;
-
 }
 
 .button_upload_image{
@@ -194,7 +196,6 @@ nav{
     text-decoration: underline;
 }
 
-=======
 .button-confrim{
     background: var(--emerald-400);
     border: 2px solid var(--emerald-100);

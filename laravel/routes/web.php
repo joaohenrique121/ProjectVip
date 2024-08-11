@@ -26,11 +26,9 @@ Route::middleware(['auth'])->group(function(){
         return view('home');
     })->name('home');
 
-<<<<<<< HEAD
     Route::post('/profileUpdate', [AlunoController::class, 'updateProfile']);
-=======
+
     //MIDDLEWARE DO ADMIN
->>>>>>> d0ccd69361c2ab1cd8676b4d87a8e381320deca7
 
     Route::middleware(AdmMiddleware::class)->group(function(){
 

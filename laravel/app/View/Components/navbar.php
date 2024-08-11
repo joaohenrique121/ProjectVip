@@ -11,9 +11,12 @@ class navbar extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+
+    public $user;
+
+    public function __construct($user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -21,6 +24,6 @@ class navbar extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.navbar');
+        return view('components.navbar')->with(['user', $this->user]);
     }
 }
