@@ -7,29 +7,25 @@ const hideElment = (element, _class) => {
 }
 
 $("#dropdown").on("click", ()=>{
-
     const dropdown = $("#dp-profile")
     hideElment(dropdown, 'dropProfile')
-
 })
-
 $("#nav-button").on('click', () => {
     const aside = $("aside")
     const button = $(this)
-
     button.prop('disabled', true)
 
-    if (!aside.hasClass('hidden')){
+    if (!aside.hasClass('hide')){
         setTimeout(()=>{
-            aside.addClass('hidden').removeClass('show')
+            aside.addClass('hide').removeClass('show')
             button.prop('disabled', false)
-        }, 420)
+        }, 500)
     }
     else{
         setTimeout(()=>{
-            aside.addClass('show').removeClass('hidden')
+            aside.addClass('show').removeClass('hide')
             button.prop('disabled', false)
-        }, 420)
+        }, 500)
     }
 })
 

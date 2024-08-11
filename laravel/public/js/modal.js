@@ -1,20 +1,15 @@
-
-const alunsosDialog = $("#alunos-dialog")[0]
-const turmasDialog = $("#turmas-dialog")[0]
-
-$(".registrar-aluno").on('click', () => {
-        alunsosDialog.showModal()
+$(".open-dialog").on('click', function (){
+    const targetDialogId = $(this).data('target')
+    const targetDialog = $(`#${targetDialogId}`)[0]
+    if (targetDialog){
+        targetDialog.showModal()
+    }
 })
 
-$("#resgistrar-turma").on('click', ()=>{
-    turmasDialog.showModal()
-})
-$(".close").on('click', ()=>{
-    if (turmasDialog.open) turmasDialog.close()
-    alunsosDialog.close()
-})
-$(".button-cancel").on('click', ()=>{
-    if (turmasDialog.open) turmasDialog.close()
-    alunsosDialog.close()
-})
+$(".close").on('click', function (){
+    const dialog = $(this).closest('dialog')[0]
 
+    if(dialog && dialog.open){
+        dialog.close()
+    }
+})

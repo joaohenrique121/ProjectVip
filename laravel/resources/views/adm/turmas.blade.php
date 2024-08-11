@@ -1,7 +1,7 @@
 @extends('home')
 @section('home-content')
         <div class="flex justify-center gap-5 mb-5">
-            <button id="resgistrar-turma" class="bg-blue-500 hover:bg-blue-600 p-2 rounded text-white"> <i class="fa-solid fa-address-book"></i> Cadastar Nova Turma</button>
+            <button id="resgistrar-turma" data-target="turmas-dialog" class="bg-blue-500 hover:bg-blue-600 p-2 rounded text-white open-dialog"> <i class="fa-solid fa-address-book"></i> Cadastar Nova Turma</button>
         </div>
         <x-modal.modal-root id="alunos-dialog">
           <x-slot:header>
@@ -13,7 +13,7 @@
         </x-slot:slot>
         <x-slot:footer>
             <x-modal.modal-footer>
-                <x-button-confirm id="#adicionar-aluno"/>
+                <x-button-confirm id="adicionar-aluno"/>
                 <x-button-cancel/>
             </x-modal.modal-footer>
         </x-slot:footer>
@@ -31,6 +31,19 @@
             </x-modal.modal-footer>
         </x-slot:footer>
         </x-modal.modal-root>
+        <x-modal.modal-root id="atividades-dialog">
+        <x-slot:slot>
+            <p class="text-center p-2 font-semibold">Postar Atividade</p>
+            <x-modal.modal-input label="Nome" type="text" placeholder="" name="nome"/>
+        </x-slot:slot>
+        <x-slot:footer>
+            <x-modal.modal-footer>
+                <x-button-confirm id="salvar-atividade"/>
+                <x-button-cancel/>
+            </x-modal.modal-footer>
+        </x-slot:footer>
+        </x-modal.modal-root>
+
               <div class="flex justify-center flex-wrap">
                   <div class="flex flex-col justify-between gap-2 w-full max-w-96 h-56 bg-white rounded shadow-md transition-transform duration-150 hover:scale-[102%]">
                       <header class="p-4 w-full flex flex-col items-center justify-center">
@@ -45,8 +58,8 @@
                               <p class="p-2 text-sm">xd</p>
                           </div>
                           <div class=" p-2">
-                              <button class="registrar-aluno"><i class="fa-solid fa-user-plus p-2"></i></button>
-                              <button class="ver-turma"><i class="fa-regular fa-clipboard p-2"></i></button>
+                              <button data-target="alunos-dialog" class="open-dialog"><i class="fa-solid fa-user-plus p-2"></i></button>
+                              <button data-target="atividades-dialog" class="open-dialog"><i class="fa-regular fa-clipboard p-2"></i></button>
                           </div>
                       </footer>
                   </div>
