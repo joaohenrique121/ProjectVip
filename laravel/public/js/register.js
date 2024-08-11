@@ -9,9 +9,6 @@ $(document).ready(function(){
             contato: $("#contato").val()
         }
 
-        console.log(data)
-
-        return
 
         const csrfToken = $('meta[name=csrf-token]').attr('content');
         $.ajax({

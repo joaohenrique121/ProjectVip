@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('contato');
             $table->boolean('is_admin')->default(false);
+            $table->longText('profile_picture')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

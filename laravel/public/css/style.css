@@ -221,3 +221,31 @@ nav{
     height: 100px;
 }
 
+.upload-image-container{
+    border-radius: 50%;
+    background-color: #ddd;
+    width: 100px;
+    height: 100px;
+}
+
+.upload-image-container input[type="file"]{
+    opacity: 1;
+}
+
+.upload-image-container label{
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+
+}
+
+.button_upload_image{
+    background-color: transparent;
+    border: none;
+}
+
+.update-profile-picture{
+    cursor: pointer;
+    text-decoration: underline;
+}
+

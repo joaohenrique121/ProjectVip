@@ -26,6 +26,8 @@ Route::middleware(['auth'])->group(function(){
         return view('home');
     })->name('home');
 
+    Route::post('/profileUpdate', [AlunoController::class, 'updateProfile']);
+
     Route::middleware(AdmMiddleware::class)->group(function(){
 
         //ROTAS DO FRONT-END

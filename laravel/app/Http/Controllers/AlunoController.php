@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\UpdateAlunoRequest;
+use Exception;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class AlunoController extends Controller
 {
@@ -35,6 +37,36 @@ class AlunoController extends Controller
     public function show($id){
         $user = User::select('id', 'name', 'email', 'contato')->where('id', $id)->first();
         return compact("user");
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $data = $request->validate([
+            'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg'
+        ]);
+        
+        $user = auth()->user();
+
+        try{
+            if ($request->hasFile('profile_picture')) {
+
+                if ($user->profile_picture != null) {
+                    Storage::disk('public')->delete($user->profile_picture);
+                }
+    
+                $image = $request->file('profile_picture')->store('profile', 'public');
+                $data['profile_picture'] = $image;
+            } else {
+                $data['profile_picture'] = $user->profile_picture;
+            }
+    
+            $user->update($data);
+    
+        }catch(Exception $error){
+            dd($error);
+        }
+
+
     }
 
 }
