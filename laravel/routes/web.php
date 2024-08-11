@@ -20,7 +20,7 @@ Route::post('/register', [authentic::class, 'register']);
 Route::post('/login', [authentic::class, 'login']);
 
 Route::middleware(['auth'])->group(function(){
-    Route::post('/logout', [authentic::class, 'logout']);
+    Route::post('/logout', [authentic::class, 'logout'])->name('logout');
     
     Route::get('/home', function(){
         return view('home');

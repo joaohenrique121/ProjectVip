@@ -46,7 +46,7 @@ body{
     align-items: center;
 }
 
-aside{
+/* aside{
     height: 100vh;
     width: 200px;
     display: flex;
@@ -57,7 +57,7 @@ aside{
     background: #555555;
     box-shadow: var(--box-shadow);
     position: fixed;
-}
+} */
 
 dialog{
     animation: scale-up 0.15s ease-in;
@@ -216,4 +216,8 @@ nav{
 .button-cancel:hover{
     background: var(--red-500);
 }
->>>>>>> d0ccd69361c2ab1cd8676b4d87a8e381320deca7
+
+/* .btn-logout{
+
+} */
+
