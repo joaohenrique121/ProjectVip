@@ -31,7 +31,6 @@
             </x-modal.modal-footer>
         </x-slot:footer>
         </x-modal.modal-root>
-<<<<<<< HEAD
         <x-modal.modal-root id="atividades-dialog">
         <x-slot:slot>
             <p class="text-center p-2 font-semibold">Postar Atividade</p>
@@ -44,12 +43,10 @@
             </x-modal.modal-footer>
         </x-slot:footer>
         </x-modal.modal-root>
-=======
 
         <x-modal.modal-root id="menu-turma">
             <x-slot:slot>
-                <p class="text-center p-2 font-semibold">Cadastrar nova turma</p>
-                <x-modal.modal-input label="Nome" type="text" placeholder="" name="nome"/>
+                <button class="bg-red-400 text-white">delete</button>
             </x-slot:slot>
             <x-slot:footer>
                 <x-modal.modal-footer>
@@ -58,12 +55,11 @@
                 </x-modal.modal-footer>
             </x-slot:footer>
             </x-modal.modal-root>
->>>>>>> 5f9f7ad6ccd483ed104a3d46956f77a24c404de5
 
               <div class="flex justify-center flex-wrap">
-                  <div class="flex flex-col justify-between gap-2 w-full max-w-96 h-56 bg-white rounded shadow-md transition-transform duration-150 hover:scale-[102%] cursor-pointer" data-targer="menu-turma">
+                  <div class="flex flex-col justify-between gap-2 w-full max-w-96 h-56 bg-white rounded shadow-md transition-transform duration-150 hover:scale-[102%] cursor-pointer ">
                       <header class="p-4 w-full flex flex-col items-center justify-center">
-                          <div class="w-full flex justify-end"><i class="fa-solid fa-ellipsis-vertical delete-turma cursor-pointer"></i></div>
+                          <button class="w-full flex justify-end open-dialog" data-target="menu-turma"><i class="fa-solid fa-ellipsis-vertical delete-turma cursor-pointer" ></i></button>
                           <div>
                               <img class="w-20" src="{{asset('images/LOGOVIP.png')}}" alt="logo">
                               <p class="text-sm text-center my-5">Turma 1</p>

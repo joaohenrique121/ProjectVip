@@ -11,13 +11,8 @@ $is_admin = $user->is_admin == 1 ? true : false;
         $aside_icons = ['fa-tasks', 'fa-chalkboard', 'fa-cog'];
     }
 @endphp
-<<<<<<< HEAD
-<aside class="flex h-screen flex-col w-52 items-center justify-between  text-white bg-zinc-600 fixed z-[1] hi">
-<ul class="flex-grow flex justify-center flex-col gap-5 ">
-=======
 <aside class="flex flex-col l w-52 items-center justify-center  text-white bg-zinc-600">
 <ul class="aside-links flex-grow flex-col justify-center gap-5">
->>>>>>> 5f9f7ad6ccd483ed104a3d46956f77a24c404de5
     @foreach($aside_items as $i => $items)
         <li class="aside-link-item">
             <a href="{{route($aside_links[$i])}}">
@@ -27,11 +22,5 @@ $is_admin = $user->is_admin == 1 ? true : false;
         </li>
     @endforeach
 </ul>
-<<<<<<< HEAD
-<div class="p-5">
-    <a href="{{route('logout')}}"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
-</div>
-=======
 <a  href="" id="logout" class="mb-4"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
->>>>>>> 5f9f7ad6ccd483ed104a3d46956f77a24c404de5
 </aside>

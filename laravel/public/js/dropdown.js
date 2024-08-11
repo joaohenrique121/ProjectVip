@@ -6,44 +6,26 @@ const hideElment = (element, _class) => {
     }
 }
 
-<<<<<<< HEAD
 $("#dropdown").on("click", ()=>{
-=======
-$("#dropdown").on("click", (e)=>{
-
->>>>>>> 5f9f7ad6ccd483ed104a3d46956f77a24c404de5
     const dropdown = $("#dp-profile")
     hideElment(dropdown, 'dropProfile')
 })
-<<<<<<< HEAD
-=======
 
 
->>>>>>> 5f9f7ad6ccd483ed104a3d46956f77a24c404de5
 $("#nav-button").on('click', () => {
     const aside = $("aside")
     const button = $(this)
     button.prop('disabled', true)
 
-<<<<<<< HEAD
-    if (!aside.hasClass('hide')){
-        setTimeout(()=>{
-            aside.addClass('hide').removeClass('show')
-=======
     if (!aside.hasClass('hiddenn')){
         setTimeout(()=>{
             aside.addClass('hiddenn').removeClass('show')
->>>>>>> 5f9f7ad6ccd483ed104a3d46956f77a24c404de5
             button.prop('disabled', false)
         }, 500)
     }
     else{
         setTimeout(()=>{
-<<<<<<< HEAD
-            aside.addClass('show').removeClass('hide')
-=======
             aside.addClass('show').removeClass('hiddenn')
->>>>>>> 5f9f7ad6ccd483ed104a3d46956f77a24c404de5
             button.prop('disabled', false)
         }, 500)
     }

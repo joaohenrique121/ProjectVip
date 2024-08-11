@@ -67,11 +67,7 @@ dialog{
     animation: slide-right 0.5s ease-in forwards;
 }
 
-<<<<<<< HEAD
-.hide{
-=======
 .hiddenn{
->>>>>>> 5f9f7ad6ccd483ed104a3d46956f77a24c404de5
     animation: slide-left 0.5s ease-out forwards;
 }
 
