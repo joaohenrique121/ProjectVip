@@ -1,6 +1,6 @@
-@props(['label', 'placeholder', 'for', 'name', 'type'])
+@props(['label', 'placeholder', 'name', 'type'])
 
-<div class="mb-3 d-flex flex-column align-items-center justify-content-center">
-    <label class="text-start w-75 py-2" for="{{$for}}">{{$label}}</label>
-    <input class="form-control w-75" type="{{$type}}" placeholder="{{$placeholder}}" name="{{$name}}" id="{{$name}}">
+<div class="flex flex-col items-center justify-center gap-2">
+    <label class="text-start w-full" for="{{$name}}">{{$label}}</label>
+    <input class="border rounded focus:outline-none w-full p-2" type="{{$type}}" placeholder="{{$placeholder}}" name="{{$name}}" id="{{$name}}">
 </div>

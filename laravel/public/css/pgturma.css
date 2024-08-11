@@ -1,4 +1,4 @@
-.table tr, th, td{
+table tr, th, td{
     border: 1px solid #ddd;
     border-collapse: collapse;
 }
