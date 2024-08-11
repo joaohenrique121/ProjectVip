@@ -6,12 +6,13 @@ const hideElment = (element, _class) => {
     }
 }
 
-$("#dropdown").on("click", ()=>{
+$("#dropdown").on("click", (e)=>{
 
     const dropdown = $("#dp-profile")
     hideElment(dropdown, 'dropProfile')
 
 })
+
 
 $("#nav-button").on('click', () => {
     const aside = $("aside")
@@ -19,15 +20,15 @@ $("#nav-button").on('click', () => {
 
     button.prop('disabled', true)
 
-    if (!aside.hasClass('hidden')){
+    if (!aside.hasClass('hiddenn')){
         setTimeout(()=>{
-            aside.addClass('hidden').removeClass('show')
+            aside.addClass('hiddenn').removeClass('show')
             button.prop('disabled', false)
         }, 420)
     }
     else{
         setTimeout(()=>{
-            aside.addClass('show').removeClass('hidden')
+            aside.addClass('show').removeClass('hiddenn')
             button.prop('disabled', false)
         }, 420)
     }
@@ -43,7 +44,7 @@ $("#upload-image").on('click', ()=>{
             formdata.append("profile_picture", file);
             const imageUrl = URL.createObjectURL(file);
             $("#preview-image").attr("src", imageUrl);
- 
+            $("#profile-image").attr("src", imageUrl);
             $.ajax({
                 type: "POST",
                 url: "/profileUpdate",
@@ -52,10 +53,6 @@ $("#upload-image").on('click', ()=>{
                 processData: false,
                 headers:{
                     'X-CSRF-TOKEN': csrfToken
-                },
-                dataType: "multipart/form-data",
-                success: function (response) {
-                    console.log(response);
                 }
             });
         }

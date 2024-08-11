@@ -67,7 +67,7 @@ dialog{
     animation: slide-right 0.5s ease-in forwards;
 }
 
-.hidden{
+.hiddenn{
     animation: slide-left 0.5s ease-out forwards;
 }
 

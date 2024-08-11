@@ -46,7 +46,7 @@ class AlunoController extends Controller
             'profile_picture' => 'nullable|image|mimes:jpeg,png,jpg'
         ]);
 
-        $user = auth()->user();
+        $user = Auth::user();
 
             if ($request->hasFile('profile_picture')) {
 
@@ -62,7 +62,7 @@ class AlunoController extends Controller
     
             $user->update($data);
 
-            return true;
+            return response()->json(['code' => 200, 'mensagem' => 'success']);
     
         }catch(Exception $error){
             return false;
