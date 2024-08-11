@@ -2,9 +2,9 @@
 
 use App\Http\Controllers\authentic;
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\TurmaController;
 use App\Http\Middleware\AdmMiddleware;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TurmaController;
 
 Route::get('/', function () {
     return view('login');
@@ -26,7 +26,11 @@ Route::middleware(['auth'])->group(function(){
         return view('home');
     })->name('home');
 
+<<<<<<< HEAD
     Route::post('/profileUpdate', [AlunoController::class, 'updateProfile']);
+=======
+    //MIDDLEWARE DO ADMIN
+>>>>>>> d0ccd69361c2ab1cd8676b4d87a8e381320deca7
 
     Route::middleware(AdmMiddleware::class)->group(function(){
 
@@ -34,28 +38,26 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('/dashboard', function(){
             return view('adm.dashboard');
-        })->middleware(AdmMiddleware::class)->name('dashboard');
+        })->name('dashboard');
 
         Route::get('/alunos', [AlunoController::class, 'index'])->name('alunos');
 
         Route::get('/turmas', [TurmaController::class, 'index'])->name('turmas');
 
+
         Route::get('atividades', function (){
             return view('adm.atividades');
         })->name('atividades');
 
-        Route::post('/deleteuser{id}', [AlunoController::class, 'delete'])->name('deleteuser');
-
-        Route::get('/getupdate{id}', [AlunoController::class, 'show'])->name('updatealuno');
-
-        Route::patch('/updatealuno', [AlunoController::class, 'update'])->name('updatealuno');
-
-
-        Route::post('/turmacreate', [TurmaController::class, 'create'])->name('turmacreate');
-
-        Route::post('/deleteturma{id}', [TurmaController::class, 'delete'])->name('deleteturma');
-
         Route::get('/alunoprofile', [AlunoController::class, 'profile'])->name('alunoprofile');
+
+        //Rotas da "api"
+
+        Route::apiResources([
+            'turma' => TurmaController::class,
+            'aluno' => AlunoController::class,
+        ]);
+
     });
 
 

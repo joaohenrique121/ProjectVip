@@ -11,7 +11,6 @@ body,html,#home{
     display: flex;
     justify-content: center;
     align-items: center;
-    display: block;
     text-align: center;
     padding: 20px ;
     border-radius: 5px;
@@ -21,8 +20,8 @@ body,html,#home{
 }
 .fundo{
     box-shadow: 2px 5px 5px 5px #ddd;
- 
-    
+
+
 }
 .bord{
     display: flex;

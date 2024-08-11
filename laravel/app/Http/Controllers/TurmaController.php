@@ -1,30 +1,45 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Turma;
-use Illuminate\Http\Request;
+
 use App\Http\Requests\TurmaRequest;
+use App\Http\Resources\TurmasResource;
+use App\Models\Turma;
 
 class TurmaController extends Controller
 {
-    public function index(){
-        $dataTurma = Turma::all();
 
-        return view('adm.turmas', compact('dataTurma'));
+    public function index(){
+        return view('adm.turmas')->with(['dataTurma' => TurmasResource::collection(Turma::all())]);
     }
 
-
-    public function create(TurmaRequest $request){
+    public function store(TurmaRequest $request)
+    {
         $data = $request->validated();
-        Turma::create($data);
 
-        return response()->json(['code' => 200, 'message' => 'success']);
+        return new TurmasResource(Turma::create($data));
+        //
+    }
 
+    /**
+     * Display the specified resource.
+     */
+    public function show(string $id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(TurmaRequest $request, string $id)
+    {
+        //
     }
 
     public function delete($id){
-        Turma::where('id', $id)->delete();
-
-        return response()->json(['code' => 200, 'message' => 'success']);
+        $turma = Turma::where('id', $id)->delete();
+        return new TurmasResource($turma);
     }
+
 }

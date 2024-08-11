@@ -1,28 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
-
-:root {
-    --red-50: #fff0f0;
-    --red-100: #ffdddd;
-    --red-200: #ffc0c1;
-    --red-300: #ff9596;
-    --red-400: #ff5859;
-    --red-500: #ff2426;
-    --red-600: #fe0f11;
-    --red-700: #d60002;
-    --red-800: #b10304;
-    --red-900: #910b0c;
-    --red-950: #500001;
-    --box-shadow: 3px 7px 10px rgba(0, 0, 0, 0.25);
-
-}
-
+@import "variables.css";
+@import "animations.css";
 
 body{
     width: 100%;
     min-height: 100vh;
     display: flex;
     position: relative;
-    background: rgba(128, 128, 128, 0.01);
+    background: rgba(211, 211, 211, 0.2)
 }
 
 .login-container{
@@ -92,12 +76,6 @@ nav{
     position: fixed;
     box-shadow: var(--box-shadow);
 }
-.padding{
-    padding: 0 20px;
-    background-color: transparent;
-    border: none;
-    color: #ffff;
-}
 
 #nav-button{
     background: transparent;
@@ -152,75 +130,42 @@ nav{
     list-style: none;
 }
 
-@keyframes slide-right {
-    0%{
-        transform: translateX(-100%);
-    }
-    100%{
-        transform: translateX(0);
-    }
-}
-
-@keyframes slide-left {
-    0%{
-        transform: translateX(0px);
-    }
-    100%{
-        transform: translateX(-100%);
-    }
-}
-
-@keyframes slide-up {
-    0%{
-        transform: translateY(-100%);
-    }
-    100%{
-        transform: translatey(0px);
-    }
-}
-@keyframes slide-down {
-    0%{
-        transform: translateY(0);
-    }
-    100%{
-        transform: translateY(-100%);
-    }
-}
-
 .modal-root{
     border: 1px solid rgba(0, 0, 0, 0.15) ;
-    min-width: 500px;
-    min-height: 300px;
+    min-width: 31rem;
     border-radius: 10px;
 }
 
-.modal-body{
-    width: calc();
-}
 
 .modal-header{
     width: 100%;
     display: flex;
     justify-content: end;
+    height: fit-content;
 }
 
-#close{
-    background-color: none;
+.close{
+    background-color: var(--gray-100);
+    color: var(--gray-700);
     border-radius: 50%;
     height: 30px;
     width: 30px;
     border: none;
 }
 
-#close:hover{
+.close:hover{
     background-color: var(--red-400);
     color: #ffff;
 }
 
 .modal-footer{
-    height: 100px;
+    height: 50px;
+    display: flex;
+    justify-content: end;
+    gap: 10px;
 }
 
+<<<<<<< HEAD
 .upload-image-container{
     border-radius: 50%;
     background-color: #ddd;
@@ -249,3 +194,25 @@ nav{
     text-decoration: underline;
 }
 
+=======
+.button-confrim{
+    background: var(--emerald-400);
+    border: 2px solid var(--emerald-100);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+.button-confrim:hover{
+    background: var(--emerald-500);
+}
+.button-cancel{
+    background: var(--red-400);
+    border: 2px solid var(--red-100);
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+.button-cancel:hover{
+    background: var(--red-500);
+}
+>>>>>>> d0ccd69361c2ab1cd8676b4d87a8e381320deca7
