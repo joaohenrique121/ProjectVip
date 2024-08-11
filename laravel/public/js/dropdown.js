@@ -6,24 +6,44 @@ const hideElment = (element, _class) => {
     }
 }
 
+<<<<<<< HEAD
 $("#dropdown").on("click", ()=>{
+=======
+$("#dropdown").on("click", (e)=>{
+
+>>>>>>> 5f9f7ad6ccd483ed104a3d46956f77a24c404de5
     const dropdown = $("#dp-profile")
     hideElment(dropdown, 'dropProfile')
 })
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 5f9f7ad6ccd483ed104a3d46956f77a24c404de5
 $("#nav-button").on('click', () => {
     const aside = $("aside")
     const button = $(this)
     button.prop('disabled', true)
 
+<<<<<<< HEAD
     if (!aside.hasClass('hide')){
         setTimeout(()=>{
             aside.addClass('hide').removeClass('show')
+=======
+    if (!aside.hasClass('hiddenn')){
+        setTimeout(()=>{
+            aside.addClass('hiddenn').removeClass('show')
+>>>>>>> 5f9f7ad6ccd483ed104a3d46956f77a24c404de5
             button.prop('disabled', false)
         }, 500)
     }
     else{
         setTimeout(()=>{
+<<<<<<< HEAD
             aside.addClass('show').removeClass('hide')
+=======
+            aside.addClass('show').removeClass('hiddenn')
+>>>>>>> 5f9f7ad6ccd483ed104a3d46956f77a24c404de5
             button.prop('disabled', false)
         }, 500)
     }
@@ -39,7 +59,7 @@ $("#upload-image").on('click', ()=>{
             formdata.append("profile_picture", file);
             const imageUrl = URL.createObjectURL(file);
             $("#preview-image").attr("src", imageUrl);
- 
+            $("#profile-image").attr("src", imageUrl);
             $.ajax({
                 type: "POST",
                 url: "/profileUpdate",
@@ -48,10 +68,6 @@ $("#upload-image").on('click', ()=>{
                 processData: false,
                 headers:{
                     'X-CSRF-TOKEN': csrfToken
-                },
-                dataType: "multipart/form-data",
-                success: function (response) {
-                    console.log(response);
                 }
             });
         }

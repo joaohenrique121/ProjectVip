@@ -6,8 +6,8 @@
             </div>
         </div>
         <li>Nome: {{$nome}}</li>
-        <li>email: {{$email}}</li>
-        <li>contato: {{$contato}}</li>
+        <li>Email: {{$email}}</li>
+        <li>Contato: {{$contato}}</li>
         <li class="update-profile-picture" id="upload-image">Alterar foto de perfil</li>
         <input type="file" name="profile_picture" class="hidden" id="profile_picture" accept="image/*">
     </ul>
