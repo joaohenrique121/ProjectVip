@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ClassesRequest;
 use App\Http\Requests\TurmaRequest;
 use App\Http\Resources\TurmasResource;
 use App\Models\Turma;
@@ -14,7 +15,7 @@ class ClassesController extends Controller
         return view('adm.turmas')->with(['dataTurma' => TurmasResource::collection(Turma::all())]);
     }
 
-    public function store(TurmaRequest $request)
+    public function store(ClassesRequest $request)
     {
         dd($request->all());
         $data = $request->validated();
@@ -35,7 +36,7 @@ class ClassesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(TurmaRequest $request, string $id)
+    public function update(ClassesRequest $request, string $id)
     {
         //
     }
