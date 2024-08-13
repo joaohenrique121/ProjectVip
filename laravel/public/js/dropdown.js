@@ -11,6 +11,11 @@ $("#dropdown").on("click", ()=>{
     hideElment(dropdown, 'dropProfile')
 })
 
+$("#drop-tools").on("click", ()=>{
+    const dropdown = $("#droptools")
+    hideElment(dropdown, 'dropProfile')
+})
+
 
 $("#nav-button").on('click', () => {
     const aside = $("aside")

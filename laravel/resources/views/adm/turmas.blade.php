@@ -1,5 +1,15 @@
 @extends('home')
 @section('home-content')
+
+<x-dropdown id="droptools">
+    <x-slot:slot>
+        <ul class="p-40">
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </x-slot:slot>
+</x-dropdown>
     <div class="flex justify-center gap-5 mb-5">
         <button id="resgistrar-turma" data-target="turmas-dialog"
                 class="bg-blue-500 hover:bg-blue-600 p-2 rounded text-white open-dialog"><i
@@ -62,6 +72,10 @@
         </x-slot:footer>
     </x-modal.modal-root>
 
+    {{-- botao para o dropdowntest --}}
+
+    <button id="drop-tools" class="p-2 bg-red-400 text-white ">BotaoDroptest</button>
+
     <div class="flex flex-wrap gap-5">
         @forelse($dataTurma as $results)
             <div class="flex flex-col justify-between gap-2 w-full max-w-96 min-h-56 bg-white rounded shadow-md">
@@ -84,6 +98,7 @@
                 </footer>
             </div>
 
+            
         @empty
             <p>Ainda não há turmas cadastradas no sistema</p>
         @endforelse
