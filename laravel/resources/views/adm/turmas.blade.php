@@ -59,7 +59,16 @@
               <div class="flex justify-center flex-wrap">
                   <div class="flex flex-col justify-between gap-2 w-full max-w-96 h-56 bg-white rounded shadow-md transition-transform duration-150 hover:scale-[102%] cursor-pointer ">
                       <header class="p-4 w-full flex flex-col items-center justify-center">
-                          <button class="w-full flex justify-end open-dialog" data-target="menu-turma"><i class="fa-solid fa-ellipsis-vertical delete-turma cursor-pointer" ></i></button>
+                          <button class="w-full flex justify-end open-dialog" id="dpmenu"><i class="fa-solid fa-ellipsis-vertical delete-turma cursor-pointer" ></i></button>
+                          <x-dropdown id="dptools">
+                            <x-slot:slot> 
+                                <ul>
+                                    <li>UMA OPCAO</li>
+                                    <li>DUAS OPCAO</li>
+                                    <li>banana</li>
+                                </ul>
+                            </x-slot:slot>
+                          </x-dropdown>
                           <div>
                               <img class="w-20" src="{{asset('images/LOGOVIP.png')}}" alt="logo">
                               <p class="text-sm text-center my-5">Turma 1</p>

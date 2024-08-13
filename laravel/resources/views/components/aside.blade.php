@@ -9,6 +9,7 @@ $is_admin = $user->is_admin == 1 ? true : false;
     else{
         $aside_items = ['Atividades', 'Minha Sala', 'Configurações'];
         $aside_icons = ['fa-tasks', 'fa-chalkboard', 'fa-cog'];
+        $aside_links = ['alunoAtividade', 'alunos', 'turmas', 'atividades'];
     }
 @endphp
 <aside class="flex flex-col l w-52 items-center justify-center  text-white bg-zinc-600">

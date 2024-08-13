@@ -28,6 +28,10 @@ Route::middleware(['auth'])->group(function(){
 
     Route::post('/profileUpdate', [AlunoController::class, 'updateProfile']);
 
+    Route::get('/alunoAtividade', function(){
+        return view('aluno.atividades');
+    })->name('alunoAtividade');
+
     //MIDDLEWARE DO ADMIN
 
     Route::middleware(AdmMiddleware::class)->group(function(){
