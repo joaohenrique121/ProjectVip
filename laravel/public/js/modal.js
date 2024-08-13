@@ -8,7 +8,6 @@ $(".open-dialog").on('click', function (){
 
 $(".close").on('click', function (){
     const dialog = $(this).closest('dialog')[0]
-
     if(dialog && dialog.open){
         dialog.close()
     }

@@ -4,14 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TurmaRequest extends FormRequest
+class ClassesRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
     public function authorize(): bool
     {
-        return true;
+        return false;
     }
 
     /**
@@ -22,7 +22,7 @@ class TurmaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|unique:turmas',
+            'level_id' => 'required|string|unique:class',
         ];
     }
 }

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\authentic;
 use App\Http\Controllers\AlunoController;
+use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Middleware\AdmMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -40,7 +41,7 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('/alunos', [AlunoController::class, 'index'])->name('alunos');
 
-        Route::get('/turmas', [TurmaController::class, 'index'])->name('turmas');
+        Route::get('/turmas', [ClassesController::class, 'index'])->name('turmas');
 
 
         Route::get('atividades', function (){
@@ -52,7 +53,7 @@ Route::middleware(['auth'])->group(function(){
         //Rotas da "api"
 
         Route::apiResources([
-            'turma' => TurmaController::class,
+            'turma' => ClassesController::class,
             'aluno' => AlunoController::class,
         ]);
 

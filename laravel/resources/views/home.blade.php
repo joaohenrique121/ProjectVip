@@ -5,7 +5,7 @@ $user = auth()->user();
 @section('content')
         <x-navbar :user="$user"/>
         <x-aside isAdmin="{{$user->is_admin}}" />
-        <main class="w-full mt-[100px] ml-52 p-5 z-0">
+        <main class="w-full mt-[100px] p-5">
                 @yield('home-content')
         </main>
 @endsection

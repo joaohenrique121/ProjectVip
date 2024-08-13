@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Http\Requests\TurmaRequest;
 use App\Http\Resources\TurmasResource;
 use App\Models\Turma;
+use Illuminate\Http\Request;
 
-class TurmaController extends Controller
+class ClassesController extends Controller
 {
 
     public function index(){
@@ -15,7 +16,9 @@ class TurmaController extends Controller
 
     public function store(TurmaRequest $request)
     {
+        dd($request->all());
         $data = $request->validated();
+
 
         return new TurmasResource(Turma::create($data));
         //
