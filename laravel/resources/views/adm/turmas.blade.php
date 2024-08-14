@@ -1,7 +1,7 @@
 @extends('home')
 @section('home-content')
 
-<x-dropdown id="droptools">
+<x-dropdown class="hidden" id="droptools">
     <x-slot:slot>
         <ul class="p-40">
             <li>1</li>
@@ -36,6 +36,7 @@
         <x-slot:slot>
             <p class="text-center p-2 font-semibold">Cadastrar nova turma</p>
             <x-modal.modal-input label="Nome" type="text" placeholder="" name="nome"/>
+            <x-modal.modal-input label="level" type="number" placeholder="" name="level"/>
         </x-slot:slot>
         <x-slot:footer>
             <x-modal.modal-footer>

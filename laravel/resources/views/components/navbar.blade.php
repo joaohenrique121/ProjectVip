@@ -6,7 +6,7 @@
         </button>
         <div class="drop-profile">
             <button id="dropdown" class="px-2 flex gap-2 items-center"><img class="rounded-full w-12 h-12" id="profile-image" src="{{asset('storage/' . $user->profile_picture) ?? ""}}" alt=""></button>
-            <x-dropdown id="dp-profile">
+            <x-dropdown class="profile" id="dp-profile">
                 <x-slot:slot>
                     <ul class="p-3">
                         <div class="flex justify-center">

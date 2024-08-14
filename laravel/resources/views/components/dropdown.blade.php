@@ -1,3 +1,3 @@
-<div class="profile" id="{{$id}}">
+<div class="{{$class}}" id="{{$id}}">
     {{$slot}}
 </div>
