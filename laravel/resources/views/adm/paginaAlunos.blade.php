@@ -15,6 +15,20 @@
                 <th class="px-4 py-2 border border-gray-300"></th>
             </tr>
             </thead>
+            <x-modal.modal-root id="dialog-alerta">
+                <x-slot:slot>
+                    <div class="flex flex-col justify-center h-48 items-center gap-16 text-center">
+                        <i class="fa-solid fa-exclamation-triangle text-4xl bg-red-700 p-4 text-white rounded-full text"></i>
+                        <p>Tem certeza de que deseja excluir essa turma?</p>
+                    </div>
+                </x-slot:slot>
+                <x-slot:footer>
+                    <x-modal.modal-footer>
+                        <x-button-confirm id="deletealuno"/>
+                        <x-button-cancel/>
+                    </x-modal.modal-footer>
+                </x-slot:footer>
+            </x-modal.modal-root>
             <tbody>
             @forelse($alunos as $aluno)
                 <tr>
@@ -27,7 +41,7 @@
                         </button>
                     </td>
                     <td class="px-4 py-2 border border-gray-300">
-                        <button class="btn btn-danger px-2 py-1 text-white hover:bg-red-600 bg-red-500 rounded" id="{{$aluno->id}}">Deletar
+                        <button data-target="dialog-alerta" class="btn btn-danger px-2 py-1 text-white hover:bg-red-600 bg-red-500 rounded open-alert" id="{{$aluno->id}}">Deletar
                         </button>
                     </td>
                 </tr>
@@ -39,6 +53,4 @@
             </tbody>
         </table>
     </div>
-
-
 @endsection

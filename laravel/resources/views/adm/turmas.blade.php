@@ -75,11 +75,9 @@
 
     {{-- botao para o dropdowntest --}}
 
-    <button id="drop-tools" class="p-2 bg-red-400 text-white ">BotaoDroptest</button>
-
     <div class="flex flex-wrap gap-5">
         @forelse($dataTurma as $results)
-            <div class="flex flex-col justify-between gap-2 w-full max-w-96 min-h-56 bg-white rounded shadow-md">
+            <div class="flex flex-col justify-between gap-2 w-full max-w-96 min-h-56 bg-white rounded shadow-md" id="{{$results->id}}">
                 <header class="p-4 w-full flex flex-col items-center justify-center">
                     <div>
                         <img class="w-20" src="{{asset('images/LOGOVIP.png')}}" alt="logo">
@@ -98,8 +96,6 @@
                     </div>
                 </footer>
             </div>
-
-            
         @empty
             <p>Ainda não há turmas cadastradas no sistema</p>
         @endforelse

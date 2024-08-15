@@ -50,6 +50,7 @@ Route::middleware(['auth'])->group(function(){
 
         Route::get('/alunoprofile', [AlunoController::class, 'profile'])->name('alunoprofile');
 
+        Route::post('/alunodelete/{id}', [AlunoController::class, 'delete']);
         //Rotas da "api"
 
         Route::apiResources([
