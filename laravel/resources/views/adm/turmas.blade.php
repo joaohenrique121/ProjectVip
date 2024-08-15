@@ -67,7 +67,7 @@
         </x-slot:slot>
         <x-slot:footer>
             <x-modal.modal-footer>
-                <x-button-confirm id="cadastrar-turma"/>
+                <x-button-confirm id="deleteturma"/>
                 <x-button-cancel/>
             </x-modal.modal-footer>
         </x-slot:footer>
@@ -77,7 +77,7 @@
 
     <div class="flex flex-wrap gap-5">
         @forelse($dataTurma as $results)
-            <div class="flex flex-col justify-between gap-2 w-full max-w-96 min-h-56 bg-white rounded shadow-md" id="{{$results->id}}">
+            <div class="flex flex-col justify-between gap-2 w-full max-w-96 min-h-56 bg-white rounded shadow-md">
                 <header class="p-4 w-full flex flex-col items-center justify-center">
                     <div>
                         <img class="w-20" src="{{asset('images/LOGOVIP.png')}}" alt="logo">
@@ -91,7 +91,7 @@
                                     class="fa-solid fa-user-plus p-2"></i></button>
                         <button data-target="atividades-dialog" class="open-dialog hover:bg-zinc-200 rounded-full"><i
                                     class="fa-regular fa-clipboard p-2"></i></button>
-                        <button data-target="menu-turma" class="open-dialog hover:bg-zinc-200 rounded-full"><i
+                        <button data-target="menu-turma" class="open-alerturma hover:bg-zinc-200 rounded-full" id="{{$results->id}}"><i
                                     class="fa-solid fa-trash p-2"></i></button>
                     </div>
                 </footer>

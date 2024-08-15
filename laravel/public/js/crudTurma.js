@@ -1,25 +1,28 @@
-$("#criarturma").click(function(){
-
-        const csrfToken = $("meta[name='csrf-token']").attr('content');
-        const dataTurma = {
-            nameturma: $("#nome").val(),
-            level_id: $("#level").val(),
-        }
+$(".open-alerturma").on('click', function (){
+    const targetDialogId = $(this).data('target')
+    const targetDialog = $(`#${targetDialogId}`)[0]
+    if (targetDialog){
+        targetDialog.showModal()
+    }
+    const id = $(this).attr('id')
+    const csrfToken = $('meta[name=csrf-token]').attr('content');
+    
+    $('#deleteturma').click(function(){
         $.ajax({
-            type: "POST",
-            url: "/turma",
-            data: dataTurma,
+            type: "delete",
+            url: `/turma/${id}`,
             dataType: "application/json",
             headers:{
                 'X-CSRF-TOKEN': csrfToken
             },
             success: function (response) {
                 if(response.code === 200){
-                    alert('ok')
-                }else{
-
+                    $("#menu-turma")[0].close()
+                    window.location.reload()
                 }
+                
             }
-        });
+        })
     })
-
+    
+})
