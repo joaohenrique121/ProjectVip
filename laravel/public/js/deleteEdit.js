@@ -11,15 +11,17 @@ $(".open-alert").on('click', function(){
         $.ajax({
             type: "POST",
             url: `/alunodelete/${id}`,
-            dataType: "dataType",
+            dataType: "json",
             headers:{
                 'X-CSRF-TOKEN': csrfToken
             },
             success: function (response) {
                 if(response.code === 200){
+                    $("#dialog-alerta")[0].close()
                     window.location.reload()
                 }
+                
             }
-        });
+        })
     })
 })
