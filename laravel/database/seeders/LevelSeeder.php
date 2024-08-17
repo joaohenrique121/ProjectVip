@@ -13,7 +13,7 @@ class LevelSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             Level::create([
                 'level' => "Nível $i"
             ]);

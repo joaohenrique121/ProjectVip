@@ -36,7 +36,16 @@
         <x-slot:slot>
             <p class="text-center p-2 font-semibold">Cadastrar nova turma</p>
             <x-modal.modal-input label="Nome" type="text" placeholder="" name="nome"/>
-            <x-modal.modal-input label="level" type="number" placeholder="" name="level"/>
+
+            <div class="flex flex-col items-center justify-center w-full gap-2">
+                <label class="text-start w-full" for="level">Nível da turma</label>
+            <select class="border rounded focus:outline-none w-full p-2 bg-white" name="level" id="level">
+                <option value="">Selecione um nível</option>
+                @foreach($levels as $level)
+                    <option value="{{$level->id}}">{{$level->level}}</option>
+                @endforeach
+            </select>
+            </div>
         </x-slot:slot>
         <x-slot:footer>
             <x-modal.modal-footer>
@@ -75,8 +84,7 @@
 
     {{-- botao para o dropdowntest --}}
 
-    <button id="drop-tools" class="p-2 bg-red-400 text-white ">BotaoDroptest</button>
-
+{{--    <button id="drop-tools" class="p-2 bg-red-400 text-white ">BotaoDroptest</button>--}}
     <div class="flex flex-wrap gap-5">
         @forelse($dataTurma as $results)
             <div class="flex flex-col justify-between gap-2 w-full max-w-96 min-h-56 bg-white rounded shadow-md">
@@ -98,8 +106,6 @@
                     </div>
                 </footer>
             </div>
-
-            
         @empty
             <p>Ainda não há turmas cadastradas no sistema</p>
         @endforelse

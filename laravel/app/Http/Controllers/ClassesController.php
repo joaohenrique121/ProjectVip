@@ -6,6 +6,7 @@ use App\Http\Requests\ClassesRequest;
 use App\Http\Requests\TurmaRequest;
 use App\Http\Resources\TurmasResource;
 use App\Models\Classes;
+use App\Models\Level;
 use App\Models\Turma;
 use Illuminate\Http\Request;
 
@@ -13,7 +14,10 @@ class ClassesController extends Controller
 {
 
     public function index(){
-        return view('adm.turmas')->with(['dataTurma' => TurmasResource::collection(Classes::all())]);
+        return view('adm.turmas')->with([
+            'dataTurma' => TurmasResource::collection(Classes::all()),
+            'levels' => Level::all()
+        ]);
     }
 
     public function store(ClassesRequest $request)
