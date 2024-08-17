@@ -46,7 +46,7 @@ class ClassesController extends Controller
         //
     }
 
-    public function delete($id){
+    public function destroy($id){
         $turma = Turma::where('id', $id)->delete();
         return new TurmasResource($turma);
     }

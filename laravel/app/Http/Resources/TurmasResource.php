@@ -16,6 +16,7 @@ class TurmasResource extends JsonResource
     {
         return [
 //            'alunos' => new AlunosResource($this->alunos),
+            'code' => 200,
             'id' => $this->id,
             'level' => $this->name,
         ];

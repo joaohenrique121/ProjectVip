@@ -14,4 +14,5 @@ $user = auth()->user();
 <script src="{{asset('js/modal.js')}}"></script>
 <script src="{{asset('js/login.js')}}"></script>
 <script src="{{asset('js/crudTurma.js')}}"></script>
+<script src="{{asset('js/deleteEdit.js')}}"></script>
 @endsection

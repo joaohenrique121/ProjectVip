@@ -14,7 +14,7 @@
                                 <img src="{{asset('storage/' . $user->profile_picture) ?? ""}}" alt="" id="preview-image" class="upload-image-container">
                             </div>
                         </div>
-                        <li>Nome: {{$user->nome}}</li>
+                        <li>Nome: {{$user->name}}</li>
                         <li>Email: {{$user->email}}</li>
                         <li>Contato: {{$user->contato}}</li>
                         <li class="update-profile-picture" id="upload-image">Alterar foto de perfil</li>
