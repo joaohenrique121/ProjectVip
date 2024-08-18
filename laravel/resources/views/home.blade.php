@@ -15,4 +15,5 @@ $user = auth()->user();
 <script src="{{asset('js/login.js')}}"></script>
 <script src="{{asset('js/crudTurma.js')}}"></script>
 <script src="{{asset('js/deleteEdit.js')}}"></script>
+<script src="{{asset('js/search.js')}}"></script>
 @endsection

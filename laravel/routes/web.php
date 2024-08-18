@@ -3,6 +3,7 @@
 use App\Http\Controllers\authentic;
 use App\Http\Controllers\AlunoController;
 use App\Http\Controllers\ClassesController;
+use App\Http\Controllers\SearchController;
 use App\Http\Controllers\TurmaController;
 use App\Http\Middleware\AdmMiddleware;
 use Illuminate\Support\Facades\Route;
@@ -58,8 +59,9 @@ Route::middleware(['auth'])->group(function(){
             'aluno' => AlunoController::class,
         ]);
 
+        Route::prefix('/search')->group(function(){
+            Route::get('/alunos', [SearchController::class, 'searchAlunos']);
+        });
     });
-
-
 
 });

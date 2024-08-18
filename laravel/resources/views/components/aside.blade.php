@@ -1,6 +1,6 @@
 @php
 $user = auth()->user();
-$is_admin = $user->is_admin == 1 ? true : false; 
+$is_admin = $user->id_type == 1;
     if ($is_admin){
         $aside_items = ['Dashboard','Alunos', 'Turmas', 'Atividades'];
         $aside_icons = ['fa-chart-line', 'fa-user', 'fa-chalkboard', 'fa-tasks'];

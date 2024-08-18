@@ -18,7 +18,7 @@ class AdmMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::check() && Auth::user()->is_admin) {
+        if(Auth::check() && Auth::user()->id_type == "1") {
             return $next($request);
         }
 

@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Storage;
 class AlunoController extends Controller
 {
     public function index(){
-        $alunos = User::where('is_admin', false)->get();
+        $alunos = User::where('id_type', "2")->get();
 
         return view('adm.paginaAlunos', compact('alunos'));
     }
