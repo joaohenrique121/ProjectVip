@@ -30,14 +30,27 @@
                 </x-slot:footer>
             </x-modal.modal-root>
             <tbody>
+            <x-modal.modal-root id="dialog-update">
+                <x-slot:slot>
+                    <x-modal.modal-input type="email" name="email" label="Email:" placeholder="email"/>
+                    <x-modal.modal-input type="text" name="namealuno" label="Nome:" placeholder="nome"/>
+                    <x-modal.modal-input type="text" name="contato" label="Contato:" placeholder="contato"/>
+                </x-slot:slot>
+                <x-slot:footer>
+                    <x-modal.modal-footer>
+                        <x-button-confirm id="save"/>
+                        <x-button-cancel/>
+                    </x-modal.modal-footer>
+                </x-slot:footer>
+            </x-modal.modal-root>
             @forelse($alunos as $aluno)
                 <tr>
-                    <td class="text-center px-4 py-2 border border-gray-300">{{$aluno->email}}</td>
-                    <td class="text-center px-4 py-2 border border-gray-300">{{$aluno->name}}</td>
-                    <td class="text-center px-4 py-2 border border-gray-300">{{$aluno->contato}}</td>
+                    <td class="text-center px-4 py-2 border border-gray-300 info">{{$aluno->email}}</td>
+                    <td class="text-center px-4 py-2 border border-gray-300 info">{{$aluno->name}}</td>
+                    <td class="text-center px-4 py-2 border border-gray-300 info">{{$aluno->contato}}</td>
                     <td class="px-4 py-2 border border-gray-300">
-                        <button class="btn btn-success px-2 py-1 text-white hover:bg-green-600 bg-green-500 rounded" id="{{$aluno->id}}"
-                                data-bs-toggle="modal" data-bs-target="#staticBackdrop">Editar
+                        <button class="btn btn-success px-2 py-1 text-white hover:bg-green-600 bg-green-500 rounded buttonedit"
+                                data-target="dialog-update">Editar
                         </button>
                     </td>
                     <td class="px-4 py-2 border border-gray-300">

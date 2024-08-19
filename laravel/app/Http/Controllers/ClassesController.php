@@ -42,9 +42,9 @@ class ClassesController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(ClassesRequest $request, string $id)
+    public function update(ClassesRequest $request, Classes $turma)
     {
-        //
+        dd($turma);
     }
 
     public function destroy($id){

@@ -18,21 +18,18 @@ class AlunoController extends Controller
 
     public function delete($id){
         User::where('id', $id)->delete();
-        
+
         return response()->json(['code' => 200, 'messege' => 'deletado com sucesso']);
     }
 
 
-    public function update(UpdateAlunoRequest $request){
-        $update = $request->validated();
+    public function update(Request $request, $email){
+//        $update = $request->validated();
 
-        $userid = $update["id"];
-        unset($update["id"]);
-
-        User::where('id', $userid)->update($update);
-
+        $user = User::where('email', $email)->get();
+        dd($user);
         return response()->json(['code' => 200, 'message' => 'success']);
-        
+
     }
     public function show($id){
         $user = User::select('id', 'name', 'email', 'contato')->where('id', $id)->first();
@@ -53,17 +50,17 @@ class AlunoController extends Controller
                 if ($user->profile_picture != null) {
                     Storage::disk('public')->delete($user->profile_picture);
                 }
-    
+
                 $image = $request->file('profile_picture')->store('profile', 'public');
                 $data['profile_picture'] = $image;
             } else {
                 $data['profile_picture'] = $user->profile_picture;
             }
-    
+
             $user->update($data);
 
             return response()->json(['code' => 200, 'mensagem' => 'success']);
-    
+
         }catch(Exception $error){
             return false;
         }
