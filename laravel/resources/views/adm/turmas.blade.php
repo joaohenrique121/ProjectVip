@@ -92,7 +92,7 @@
         </x-slot:slot>
     </x-modal.modal-root>
 
-    <div class="flex flex-wrap gap-3">
+    <div class="flex flex-wrap gap-3 justify-center">
         @forelse($dataTurma as $results)
             <div class="flex flex-col justify-between gap-2 w-full max-w-96 min-h-56 bg-white rounded shadow-md">
                 <header class="p-4 w-full flex flex-col items-center justify-center">

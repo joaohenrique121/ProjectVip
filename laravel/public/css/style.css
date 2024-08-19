@@ -63,6 +63,10 @@ dialog{
     animation: scale-up 0.15s ease-in;
 }
 
+dialog::backdrop{
+    background: rgba(0,0,0,0.45);
+}
+
 .show{
     animation: slide-right 0.5s ease-in forwards;
 }
@@ -218,7 +222,5 @@ nav{
     background: var(--red-500);
 }
 
-/* .btn-logout{
 
-} */
 
